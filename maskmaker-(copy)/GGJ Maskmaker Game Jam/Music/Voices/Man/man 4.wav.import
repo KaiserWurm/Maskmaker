@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i7lupy2xdi4q"
+path="res://.godot/imported/man 4.wav-dbf0118944c90902ac90f07cf6c68f68.sample"
+
+[deps]
+
+source_file="res://GGJ Maskmaker Game Jam/Music/Voices/Man/man 4.wav"
+dest_files=["res://.godot/imported/man 4.wav-dbf0118944c90902ac90f07cf6c68f68.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

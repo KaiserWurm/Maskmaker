@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu3c0yd10uvt1"
+path="res://.godot/imported/GGJ Samples.wav-765e9b9ef05d97deb641d0d71523b8cf.sample"
+
+[deps]
+
+source_file="res://GGJ Maskmaker Game Jam/Music/GGJ Samples.wav"
+dest_files=["res://.godot/imported/GGJ Samples.wav-765e9b9ef05d97deb641d0d71523b8cf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

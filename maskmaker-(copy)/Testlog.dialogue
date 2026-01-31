@@ -1,11 +1,23 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+Maskmaker: The tide rises.
+[color=cyan]Tilda[/color]: The tide rises.
+Maskmaker: How are you doing?
+[color=cyan]Tilda[/color]: I'll be honest, I'm very nervous.
+Maskmaker: This is understandable.
+Maskmaker: Shall we begin?
+[color=cyan]Tilda[/color]: I suppose we must. 
+~ home
+- Tell me about yourself.
+	Maskmaker: So, tell me about yourself.
+	[color=cyan]Tilda[/color]: Bugs, I hate that question.
+	[color=cyan]Tilda[/color]: How am I supposed to respond? I'm Tilda? I'm a girl?
+	[color=cyan]Tilda[/color]: I'm currently terrified to ascend?
+	[color=cyan]Tilda[/color]: What in the world am I supposed to say to that?
+	- Apologize
+	- Rephrase question
+	- Guilt trip
+- Why are you nervous?
+- What type mask would you like?
+- Are you ready to ascend?
+- Do you have any questions for me?
 => END

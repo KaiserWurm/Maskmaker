@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5rypa1ksw5um"
+path="res://.godot/imported/Woman 1.wav-763ca0be72304c42ababc8d8613f1114.sample"
+
+[deps]
+
+source_file="res://GGJ Maskmaker Game Jam/Music/Voices/Woman/Woman 1.wav"
+dest_files=["res://.godot/imported/Woman 1.wav-763ca0be72304c42ababc8d8613f1114.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
