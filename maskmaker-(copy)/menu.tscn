@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dhmq0cgh535gt"]
+
+[node name="Menu" type="Control" unique_id=1544959263]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1742293462]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5028937, 0.99218386, 0.7431768, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=1043539332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer" unique_id=1254894543]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "The Maskmaker"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer" unique_id=342718650]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainer" unique_id=569051268]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1481157179]
+layout_mode = 2
+text = "Level 1"

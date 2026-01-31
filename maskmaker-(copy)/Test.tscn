@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://scy8ycf86rna"]
+
+[ext_resource type="Script" uid="uid://by2gu5f2vuiuf" path="res://test.gd" id="1_njov2"]
+[ext_resource type="Texture2D" uid="uid://bv553m1sl25nh" path="res://icon.svg" id="2_2au82"]
+[ext_resource type="Resource" uid="uid://c2nu7bg4krw5s" path="res://Testlog.dialogue" id="2_8tn2x"]
+
+[node name="Node2D" type="Node2D" unique_id=1286026568]
+script = ExtResource("1_njov2")
+words = ExtResource("2_8tn2x")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1085435448]
+position = Vector2(162, 171)
+texture = ExtResource("2_2au82")
