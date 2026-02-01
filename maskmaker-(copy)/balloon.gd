@@ -20,6 +20,10 @@ extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
+## Pitch variable 1 and 2
+@onready var p1 = 1.1
+@onready var p2 = 0.9
+
 ## Temporary game states
 var temporary_game_states: Array = []
 
@@ -129,11 +133,9 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	if dialogue_line.character == "Maskmaker":
-		%CharacterLabel.add_theme_color_override("default_color", Color.RED)
-		%DialogueLabel.seconds_per_step = 0.04
+		_update_character_text(Color.RED, 0.04, 1.1, 0.9)
 	elif dialogue_line.character == "Tilda":
-		%CharacterLabel.add_theme_color_override("default_color", Color.CYAN)
-		%DialogueLabel.seconds_per_step = 0.02
+		_update_character_text(Color.CYAN, 0.02, 1.4, 1.2)
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -218,6 +220,13 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 #endregion
 
+func _update_character_text(color, talkspeed, pitchhigh, pitchlow):
+	%CharacterLabel.add_theme_color_override("default_color", color)
+	%DialogueLabel.seconds_per_step = talkspeed
+	p1 = pitchhigh
+	p2 = pitchlow
 
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
-	%AudioStreamPlayer.play()
+	if not letter in [" ", "."]:
+		%AudioStreamPlayer.pitch_scale = randf_range(p1, p2)
+		%AudioStreamPlayer.play()

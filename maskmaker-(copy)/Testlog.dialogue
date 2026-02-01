@@ -8,16 +8,20 @@ Maskmaker: Shall we begin?
 Tilda: I suppose we must. 
 ~ home
 - Tell me about yourself.
-	Maskmaker: So, tell me about yourself.
-	Tilda: Bugs, I hate that question.
-	Tilda: How am I supposed to respond? I'm Tilda? I'm a girl?
-	Tilda: I'm currently terrified to ascend?
-	Tilda: What in the world am I supposed to say to that?
-	- Apologize
-	- Rephrase question
-	- Guilt trip
+	=> personal
 - Why are you nervous?
-- What type mask would you like?
+- What type of mask would you like?
 - Are you ready to ascend?
 - Do you have any questions for me?
+
+~ personal
+Maskmaker: So, tell me about yourself.
+Tilda: Bugs, I hate that question.
+Tilda: How am I supposed to respond? I'm Tilda? I'm a girl?
+Tilda: I'm currently terrified to ascend?
+Tilda: What in the world am I supposed to say to that?
+- Apologize
+- Rephrase question
+- Guilt trip
+=> home
 => END
