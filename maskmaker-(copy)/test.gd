@@ -3,6 +3,7 @@ extends Node2D
 @export var words: DialogueResource
 @onready var mood = "neut"
 @onready var bounce = false
+@onready var maskselector =$"Mask Selection"
 @export var talkheight = 10
 var rest
 
