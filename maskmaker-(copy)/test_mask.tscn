@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bv553m1sl25nh" path="res://icon.svg" id="1_v68l7"]
 [ext_resource type="Script" uid="uid://cxqi6iir0apw" path="res://mask_1.gd" id="2_pex5a"]
 [ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="3_pex5a"]
+[ext_resource type="AudioStream" uid="uid://dtjvjma7olxvq" path="res://GGJ Maskmaker Game Jam/Music/Discovery.wav" id="4_0d4cl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4cl"]
 bg_color = Color(0, 0, 0, 0.49411765)
@@ -40,6 +41,9 @@ theme_override_font_sizes/font_size = 40
 text = "test"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Discover" type="AudioStreamPlayer" parent="." unique_id=573067935]
+stream = ExtResource("4_0d4cl")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://oodj7luwff2w"]
+
+[ext_resource type="Texture2D" uid="uid://b2asi4c1dyssg" path="res://GGJ Maskmaker Game Jam/image-from-rawpixel-id-13898128-png.png" id="1_c7s2v"]
+
+[sub_resource type="Gradient" id="Gradient_c7s2v"]
+offsets = PackedFloat32Array(0, 0.29320988, 0.67901236, 1)
+colors = PackedColorArray(0.83137256, 0.6862745, 0.21568628, 0, 0.83137256, 0.6862745, 0.21568628, 1, 0.83137256, 0.6862745, 0.21568628, 1, 0, 0, 0, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=1373107089]
+amount = 20
+texture = ExtResource("1_c7s2v")
+lifetime = 5.0
+lifetime_randomness = 0.2
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(960, 540)
+direction = Vector2(0, 1)
+spread = 97.13
+gravity = Vector2(0, 0)
+initial_velocity_max = 59.4
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color = Color(0.83137256, 0.6862745, 0.21568628, 0.23529412)
+color_ramp = SubResource("Gradient_c7s2v")
