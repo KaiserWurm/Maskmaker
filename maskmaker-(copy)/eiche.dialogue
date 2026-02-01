@@ -1,0 +1,199 @@
+~ start
+# Intro
+Maskmaker: The tide rises.
+Unknown ascender: The tide rises.
+Maskmaker: What is your name?
+Unknown child: Eiche.
+Maskmaker: Excellent. Now who is Eiche?
+Eiche: ... Me?
+Maskmaker: What I mean is [wait=0.5] please tell me more about yourself.
+Eiche: Oh... I see... Uh, where to start... I'm Eiche. I'm 21 years old. I've had four kids. I help out with repairing furniture and other household items when I'm not cooking or raising kids. I've actually gotten pretty good at tying knots through it all.
+Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
+
+~ getToKnowStart
+- What kind of knots can you tie? [if not locals.knots_asked]
+	set locals.knots_asked = true
+	Maskmaker: What kind of knots can you tie?
+	Eiche: Most.
+	Maskmaker: So square knot, figure 8, and many more?
+	Eiche: Ya, those and others.
+	Maskmaker: Which do you tie the most?
+	Eiche: Triple fisherman, square, and beer knots.
+	- Do your friends tie knots too?
+		Maskmaker: Do your friends tie knots too?
+		Eiche: Yes, we all repair furniture together. One of my friends, Tofua, was into it and got me and my other friends into it.
+		- Who are your friends?
+			set locals.who_are_friends == true
+			Maskmaker: Who are your friends?
+			Eiche: Well, uh, there's Ika, Tofua like I mentioned, Nyasi, my partner Almia, and I guess Will too.
+			Maskmaker: Are they also of age to ascend?
+			Eiche: Some of them already went. Almia has a bit more time though.
+			Maskmaker: So you're not the youngest one.
+			Eiche: Ya.
+			- What fun things do you do with friends? [if not locals.fun_friend_activities]
+			- How did you meet your partner? [if not locals.meet_partner]
+			- How was last seeing them like? [if not locals.last_friend_meeting]
+			- Move on with the interview
+				~ getToKnowYouToFirstQuestion
+				Maskmaker: It is a pleasure to meet you Eiche. The stars and the moon never pause for us, so let us move on.
+				=> firstStandardQuestion
+			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+		- What fun things do you do with friends?
+			set locals.fun_friend_activities == true
+			Maskmaker: What other fun things do you do with your friends besides tie knots?
+			Eiche: We exercise, uh, I box with the boys. We do some competitive cup stacking sometimes since Nysasi loves it. I rarely win, but it's still fun. And... ya. That's mostly it.
+			- What's your cup stacking record?
+				Maskmaker: What's your cup stacking record?
+				Eiche: 10 cups, 5 sets in 28 seconds.
+				Maskmaker: That's impressive. Your speed and dexterity must be incredible.
+				Eiche: If you think I'm good then you should see my friend Nyasi. He's incredible. He can do it in 24 seconds.
+				Maskmaker: Has Nysasi already ascended? I don't remember meeting him.
+				Eiche: Ya, he ascended last year.
+				Maskmaker: Oh, I see... Maybe you can play with him again soon.
+				Eiche: Ya, that'd be nice.
+				- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+					=> getToKnowStart
+				- Move on with the interview
+					=> getToKnowYouToFirstQuestion
+			- Do you want to be a builder?
+				Maskmaker: Do you want to be a builder?
+				=> eicheWantsToBeAPriest
+			- Who's your favorite boxer?
+				=> getToKnowFavoriteBoxer
+			- Do you love your body?
+				Maskmaker: Do you love your body?
+				Eiche: Ya, even though we're tainted, we still matter. Ocara still loves us after everything that happened.
+				Maskmaker: Yes, that's good. You do what you love, and if you love your body then you will use and perfect using it.
+				Eiche: Makes sense.
+				=> getToKnowStart
+		- How did you meet your partner?
+			set locals.meet_partner == true
+			Maskmaker: How did you meet your partner, Almia?
+			Eiche: We were cooking for some younger kids and started chatting. I made some jokes. She laughed at them. I remember we were making bronze fish stew with different vegetables but mostly potatoes. Things worked out from there I guess.
+			Maskmaker: That's nice. I'm glad that you met someone while down here.
+			Eiche: Thanks, me too.
+			- How was last seeing them like?
+				=> finalSightOfFriends
+			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
+			- Move on with the interview
+				=> getToKnowYouToFirstQuestion
+		- How was last seeing them like?
+			~ finalSightOfFriends
+			set locals.last_friend_meeting
+			if locals.meet_partner
+				Maskmaker: What was it like to see your friend's faces, especially Almia's, for the last time?
+			else
+				Maskmaker: What was it like to see your friend's faces for the last time?
+			Eiche: ... [wait=3] It was hard.
+			Maskmaker: I'm sorry.[wait=1] One day you may see them in heaven.
+			Eiche: I hope so.
+			Maskmaker: Sometimes to rise you must leave some things behind. We've all done so.
+			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
+			- Move on with the interview
+				=> getToKnowYouToFirstQuestion
+	- Square knots are the best.
+		Maskmaker: Square knots are the best.
+		Eiche: They're good in the right situation.
+		- You're wrong
+			~ knotsYouAreWrong
+			Maskmaker: No, it's always the best knot. There's no reason to use any other type of knot.
+			Eiche: You have more wisdom and experience than me.[wait=0.5] I'll trust you on this.
+			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
+			- Move on with the interview
+				=> getToKnowYouToFirstQuestion
+		- Elaborate please
+			Maskmaker: Hmm... Please elaborate further on why you think that.
+			Eiche: Well, some knots are great for a single line of string or rope.
+			Maskmaker: Yes, different knots have different requirements. I'm talking specifically about knots that require two strings coming together.
+			Eiche: Ok, so for two strings or ropes that need to be tied together I gow ith the Triple Fisherman knot the most since it's so sturdy. If I were sitting on a chair that I didn't want to break then I would not trust a square knot to keep me stable.
+			- You're wrong
+				=> knotsYouAreWrong
+			- Okay, maybe you're right
+				=> knotsYouAreRight
+			- Let's agree to disagree
+				=> knotsLetUsDisagree
+		- Okay, maybe you're right
+			~ knotsYouAreRight
+			Maskmaker: Okay, you make a fair point.
+			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
+			- Move on with the interview
+				=> getToKnowYouToFirstQuestion
+		- Let's agree to disagree
+			~ knotsLetUsDisagree
+			Maskmaker: I am not convinced but that is fine. We do not need to share the same view or opinion.
+			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
+			- Move on with the interview
+				=> getToKnowYouToFirstQuestion
+	- Do you want to be a fisherman?
+		Maskmaker: Do you want to be a fisherman?
+		~ eicheWantsToBeAPriest
+		Eiche: No. I want to be a Priest. I could help people serve Ocara and inspire the people.
+		Maskmaker: That's very aspirational of you. The priest service is not easy.
+		Eiche: I know, but I'm not afraid of hard work.
+		Maskmaker: It's not just hard, it's abstract. It's rarely straightforward and repeatable like tying knots or fixing furniture.
+		Eiche: I know, but I'm good with that.
+		Maskmaker: Good? How so?
+		Eiche: Raising kids isn't straightforward.
+		Maskmaker: Hmm...
+		- Move on with the interview
+			=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			=> getToKnowStart
+	- Move on with the interview
+		=> getToKnowYouToFirstQuestion
+	- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+		Maskmaker: Interested...
+		=> getToKnowStart
+	#=> getToKnowStart
+- Why repairing furniture? [if not locals.repair_furniture]
+	set locals.repair_furniture == true
+	Maskmaker: Why do you like to repair furniture?
+	Eiche: I like to fix and heal things. People, stuff, anything really.
+	Maskmaker: So you are a fixer?
+	Eiche: Kind of.
+	
+	- Move on with the interview
+		=> getToKnowYouToFirstQuestion
+	- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+		=> getToKnowStart
+	
+- Who's your favorite boxer? [if not locals.favorite_boxer]
+	~ getToKnowFavoriteBoxer
+	set locals.favorite_boxer == true
+- What are your kids like? [if not locals.kid_info]
+	set locals.kid_info == true
+- Move on with the interview
+	=> getToKnowYouToFirstQuestion
+
+~ firstStandardQuestion
+
+~secondStandardQuestion
+
+~thirdStandardQuestion
+
+~closingQuestion
+
+
+
+
+
+
+
+
+
+
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => start
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+=> END
