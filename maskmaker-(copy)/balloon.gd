@@ -139,6 +139,9 @@ func apply_dialogue_line() -> void:
 		_update_character_text(Color.RED, 0.04, 1.1, 0.9)
 	elif dialogue_line.character == "Tilda":
 		_update_character_text(Color.CYAN, 0.02, 1.4, 1.2)
+	elif dialogue_line.character == "Laurus":
+		_update_character_text(Color.BROWN, 0.04, 1.0, 0.8)
+
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

@@ -1,0 +1,41 @@
+~ start
+Maskmaker: The tide rises.
+Laurus: The tide rises.
+Maskmaker: How are you doing?
+Laurus: I'm ready to ascend.
+Maskmaker: Then let's get started.
+~ home
+- Tell me about yourself.
+Laurus: I'm Laurus. I like to make things.
+=> Personal
+- What mask would you like?
+Laurus: I want to be part of the clergy, doesn't everyone?
+=> Mask
+~ Personal
+- What do you like to make?
+Laurus: Small carvings, mostly of what I think the surface will look like.
+Laurus: I'll admit, I know that bone is unclean, but it carves so easily that sometimes I use it anyway. [if mood == "open"]
+Laurus: Will I be able to bring some of my carvings with me?
+Maskmaker: No child, O’cara demands we leave our physical belongings just as much as she demands our spiritual self to be washed in the waves. [#mood = “open”]
+=> home 
+- You must be very creative.
+Laurus: I just carve whatever comes to mind. [if mood =="open"] Though mostly I carve what I imagine trees look like[/if] [mood = “open”]
+=> home 
+- (Move on) [#mood = “neut”]
+=> home 
+~ Mask
+- I didn’t.
+Laurus: How did you end up clergy then? [if mood == "open"]
+Laurus: Oh… [if mood == "neut"]
+=> Explain
+=> Mask
+- The clergy may receive great honors, but others find more fulfilling currents in life.
+Laurus: 
+~ Explain
+- When I sat in your chair…
+Maskmaker: It was probably 30 years ago by now, but the maskmaker that was talking to me saw something in me that I didn’t see myself.
+Maskmaker: They saw my resolve and my curiosity as well as my devotion to O’cara.
+Maskmaker: I did not show my devotion in the same way as the other clergy, but my love of the oceanic made my 10 years on the surface wonderful.
+=> Mask
+- Sometimes the currents pull you in ways you don’t expect.
+- We’re not here to talk about my story.
