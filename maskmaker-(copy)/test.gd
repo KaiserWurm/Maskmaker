@@ -4,7 +4,7 @@ extends Node2D
 @onready var mood = "neut"
 @onready var bounce = false
 @onready var maskselector =$"Mask Selection"
-@export var talkheight = 10
+@export var talkheight = -10
 var rest
 var endingbegun = false
 @export_file("*.tscn") var nextscene: String
@@ -14,13 +14,13 @@ var endingbegun = false
 # Load the dialogue file here
 func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(words, "start")
-	rest = $TempMan.position.y
+	rest = $TempMan/Sprite2D.position.y
 
 func _process(delta: float) -> void:
 	if DialogueManager.speak == 1:
-		$TempMan.position.y = rest+talkheight
+		$TempMan/Sprite2D.position.y = rest+talkheight
 	else:
-		$TempMan.position.y = rest
+		$TempMan/Sprite2D.position.y = rest
 	if DialogueManager.endingchosen != "none" && endingbegun == false:
 		endingbegun = true
 		$Ending.visible = true

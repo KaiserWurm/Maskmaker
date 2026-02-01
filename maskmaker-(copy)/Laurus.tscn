@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://by2gu5f2vuiuf" path="res://test.gd" id="1_ueklj"]
 [ext_resource type="Resource" uid="uid://b0wigmgyniva2" path="res://Laurus.dialogue" id="2_ueklj"]
 [ext_resource type="AudioStream" uid="uid://dtjvjma7olxvq" path="res://GGJ Maskmaker Game Jam/Music/Discovery.wav" id="3_lh1yy"]
-[ext_resource type="Texture2D" uid="uid://d0lymxosqxfes" path="res://GGJ Maskmaker Game Jam/Art/temp_man.png" id="4_28l77"]
-[ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="5_olmoc"]
+[ext_resource type="Texture2D" uid="uid://bctrfe7kvffp4" path="res://GGJ Maskmaker Game Jam/Art/MAN_base.png" id="4_ueklj"]
+[ext_resource type="Texture2D" uid="uid://chb5wgkfoxf0j" path="res://GGJ Maskmaker Game Jam/Art/MAN_JAW.png" id="5_fjgia"]
 [ext_resource type="AudioStream" uid="uid://6yg7klb4d7ps" path="res://GGJ Maskmaker Game Jam/Music/Background Music.wav" id="6_c5vt5"]
+[ext_resource type="Texture2D" uid="uid://djew6telt5yc5" path="res://GGJ Maskmaker Game Jam/window_final.png" id="6_lh1yy"]
 [ext_resource type="PackedScene" uid="uid://djoaamchonsc8" path="res://click.tscn" id="7_p271w"]
 [ext_resource type="Theme" uid="uid://do4lnijx2yxd6" path="res://ballontheme.tres" id="8_hem8h"]
 [ext_resource type="Script" path="res://mask_selection.gd" id="9_6ehas"]
 [ext_resource type="PackedScene" uid="uid://bclblgb38boyo" path="res://test_mask.tscn" id="10_mxqpr"]
 [ext_resource type="Texture2D" uid="uid://eb8668qesap7" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Miner Mask.png" id="11_65a2g"]
-[ext_resource type="Resource" uid="uid://b3p5rb4kdqvhn" path="res://Test Epilogue.dialogue" id="12_275ds"]
 [ext_resource type="Texture2D" uid="uid://ctkylrn4cgws3" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Doctor Mask.png" id="13_bynp4"]
 [ext_resource type="Texture2D" uid="uid://p6p4x6agajr3" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Entertainer Mask.png" id="14_0wlp7"]
 [ext_resource type="Texture2D" uid="uid://0xup0tu4ej2v" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Reclaimer Mask.png" id="15_e04f0"]
@@ -25,12 +25,16 @@ words = ExtResource("2_ueklj")
 nextscene = "uid://c353s3yv2kwea"
 discovery = ExtResource("3_lh1yy")
 
-[node name="TempMan" type="Sprite2D" parent="." unique_id=1375537068]
-texture = ExtResource("4_28l77")
+[node name="TempMan" type="Sprite2D" parent="." unique_id=1688174738]
+texture = ExtResource("4_ueklj")
 centered = false
 
-[node name="TempWindow" type="Sprite2D" parent="." unique_id=416451783]
-texture = ExtResource("5_olmoc")
+[node name="Sprite2D" type="Sprite2D" parent="TempMan" unique_id=1245293370]
+texture = ExtResource("5_fjgia")
+centered = false
+
+[node name="TempWindow" type="Sprite2D" parent="." unique_id=1541715458]
+texture = ExtResource("6_lh1yy")
 centered = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=378548483]
@@ -81,42 +85,42 @@ columns = 3
 [node name="TestMask" parent="Mask Selection/Panel/MarginContainer/GridContainer" unique_id=78403653 instance=ExtResource("10_mxqpr")]
 layout_mode = 2
 texture = ExtResource("11_65a2g")
-words = ExtResource("12_275ds")
+words = ExtResource("2_ueklj")
 description = "Miner's don't ascend. Choosing this mask of the Miner will curse them to be seperated from their families above. Just like you are."
 maskid = "miner"
 
 [node name="TestMask2" parent="Mask Selection/Panel/MarginContainer/GridContainer" unique_id=262427500 instance=ExtResource("10_mxqpr")]
 layout_mode = 2
 texture = ExtResource("13_bynp4")
-words = ExtResource("12_275ds")
+words = ExtResource("2_ueklj")
 description = "Bodies are vile, unclean things. Through Ocara we will leave our bodies behind, but doctors are cursed to keep their focus on the unclean and impure. At least they ascend."
 maskid = "doctor"
 
 [node name="TestMask3" parent="Mask Selection/Panel/MarginContainer/GridContainer" unique_id=721214547 instance=ExtResource("10_mxqpr")]
 layout_mode = 2
 texture = ExtResource("14_0wlp7")
-words = ExtResource("12_275ds")
+words = ExtResource("2_ueklj")
 description = "The Clergy recognize the need for art and merriment, even if it distracts from the laborious great work above. To spend your time on frivolities instead of helping your brothers and sisters is a dream to some, and unbearable to others."
 maskid = "entertainer"
 
 [node name="TestMask4" parent="Mask Selection/Panel/MarginContainer/GridContainer" unique_id=934438919 instance=ExtResource("10_mxqpr")]
 layout_mode = 2
 texture = ExtResource("15_e04f0")
-words = ExtResource("12_275ds")
+words = ExtResource("2_ueklj")
 description = "When the world fell, the remnants of our unclean forefathers remained, scatter across the Above. Just as the ocean makes the Above clean, reclaimers find these remnants and make them holy once more."
 maskid = "reclaimer"
 
 [node name="TestMask5" parent="Mask Selection/Panel/MarginContainer/GridContainer" unique_id=853057579 instance=ExtResource("10_mxqpr")]
 layout_mode = 2
 texture = ExtResource("16_nq8x6")
-words = ExtResource("12_275ds")
+words = ExtResource("2_ueklj")
 description = "Tiling the soil, growing the food that feeds and nourishes the great labor. To most, this is the highest honor one can hope for, to be entrusted with the caretaking of the new world Ocara is making.."
 maskid = "gardener"
 
 [node name="TestMask6" parent="Mask Selection/Panel/MarginContainer/GridContainer" unique_id=1974843663 instance=ExtResource("10_mxqpr")]
 layout_mode = 2
 texture = ExtResource("17_3k8mf")
-words = ExtResource("12_275ds")
+words = ExtResource("2_ueklj")
 description = "Ocara's chosen, and the highest honor one can receive. With that honor comes the burden of responsibility unparalelled by any other mask. "
 maskid = "priest"
 

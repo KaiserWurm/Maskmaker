@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://by2gu5f2vuiuf" path="res://test.gd" id="1_inbbf"]
 [ext_resource type="Resource" uid="uid://46trmxpjy67c" path="res://eiche.dialogue" id="2_inbbf"]
 [ext_resource type="AudioStream" uid="uid://dtjvjma7olxvq" path="res://GGJ Maskmaker Game Jam/Music/Discovery.wav" id="3_lkc6s"]
-[ext_resource type="Texture2D" uid="uid://d0lymxosqxfes" path="res://GGJ Maskmaker Game Jam/Art/temp_man.png" id="4_jne71"]
-[ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="5_yveha"]
+[ext_resource type="Texture2D" uid="uid://bctrfe7kvffp4" path="res://GGJ Maskmaker Game Jam/Art/MAN_base.png" id="4_21hhb"]
+[ext_resource type="Texture2D" uid="uid://chb5wgkfoxf0j" path="res://GGJ Maskmaker Game Jam/Art/MAN_JAW.png" id="5_lkc6s"]
+[ext_resource type="Texture2D" uid="uid://djew6telt5yc5" path="res://GGJ Maskmaker Game Jam/window_final.png" id="6_jne71"]
 [ext_resource type="AudioStream" uid="uid://6yg7klb4d7ps" path="res://GGJ Maskmaker Game Jam/Music/Background Music.wav" id="6_wlum7"]
 [ext_resource type="PackedScene" uid="uid://djoaamchonsc8" path="res://click.tscn" id="7_myvl2"]
 [ext_resource type="Theme" uid="uid://do4lnijx2yxd6" path="res://ballontheme.tres" id="8_it51w"]
@@ -25,12 +26,16 @@ words = ExtResource("2_inbbf")
 nextscene = "uid://3j372ojgi7yl"
 discovery = ExtResource("3_lkc6s")
 
-[node name="TempMan" type="Sprite2D" parent="." unique_id=1375537068]
-texture = ExtResource("4_jne71")
+[node name="TempMan" type="Sprite2D" parent="." unique_id=1101831577]
+texture = ExtResource("4_21hhb")
 centered = false
 
-[node name="TempWindow" type="Sprite2D" parent="." unique_id=416451783]
-texture = ExtResource("5_yveha")
+[node name="Sprite2D" type="Sprite2D" parent="TempMan" unique_id=1438909007]
+texture = ExtResource("5_lkc6s")
+centered = false
+
+[node name="TempWindow" type="Sprite2D" parent="." unique_id=1323574771]
+texture = ExtResource("6_jne71")
 centered = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=378548483]
