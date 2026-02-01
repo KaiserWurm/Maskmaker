@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b0wigmgyniva2"
+path="res://.godot/imported/Laurus.dialogue-e947bdd6f7daeeedf290e21031903b38.tres"
+
+[deps]
+
+source_file="res://Laurus.dialogue"
+dest_files=["res://.godot/imported/Laurus.dialogue-e947bdd6f7daeeedf290e21031903b38.tres"]
+
+[params]
+
+defaults=true

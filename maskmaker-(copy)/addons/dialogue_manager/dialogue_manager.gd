@@ -37,6 +37,9 @@ signal bridge_get_line_completed(call_index: int, line: DialogueLine)
 ## Used internally
 signal bridge_mutated(call_index: int)
 
+var speak = 0
+
+var endingchosen = "none"
 
 ## The list of globals that dialogue can query
 var game_states: Array = []

@@ -26,6 +26,8 @@ extends CanvasLayer
 
 ## mood of character
 @onready var mood = "neut"
+@onready var interests = []
+
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -73,7 +75,6 @@ var mutation_cooldown: Timer = Timer.new()
 
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
-
 
 func _ready() -> void:
 	balloon.hide()
@@ -139,6 +140,9 @@ func apply_dialogue_line() -> void:
 		_update_character_text(Color.RED, 0.04, 1.1, 0.9)
 	elif dialogue_line.character == "Tilda":
 		_update_character_text(Color.CYAN, 0.02, 1.4, 1.2)
+	elif dialogue_line.character == "Laurus":
+		_update_character_text(Color.SEA_GREEN, 0.04, 1.0, 0.8)
+
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -233,3 +237,9 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 	if not letter in [" ", "."]:
 		%AudioStreamPlayer.pitch_scale = randf_range(p1, p2)
 		%AudioStreamPlayer.play()
+	if not dialogue_line.character == "Maskmaker":
+		if DialogueManager.speak == 0:
+			DialogueManager.speak = 1
+		else:
+			DialogueManager.speak = 0
+	
