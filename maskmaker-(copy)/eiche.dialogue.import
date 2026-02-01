@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://46trmxpjy67c"
+path="res://.godot/imported/eiche.dialogue-ac297d8d41feb6581b29fb02b3f59af5.tres"
+
+[deps]
+
+source_file="res://eiche.dialogue"
+dest_files=["res://.godot/imported/eiche.dialogue-ac297d8d41feb6581b29fb02b3f59af5.tres"]
+
+[params]
+
+defaults=true

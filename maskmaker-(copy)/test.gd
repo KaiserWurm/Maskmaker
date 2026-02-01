@@ -11,6 +11,7 @@ var endingbegun = false
 @export var discovery: AudioStream
 
 # Called when the node enters the scene tree for the first time.
+# Load the dialogue file here
 func _ready() -> void:
 	#for n in $"Mask Selection/Panel/MarginContainer/GridContainer":
 		#print("whee")
