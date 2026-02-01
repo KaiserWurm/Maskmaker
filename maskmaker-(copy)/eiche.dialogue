@@ -7,7 +7,7 @@ Unknown child: Eiche.
 Maskmaker: Excellent. Now who is Eiche?
 Eiche: ... Me?
 Maskmaker: What I mean is [wait=0.5] please tell me more about yourself.
-Eiche: Oh... I see... Uh, where to start... I'm Eiche. I'm 21 years old. I've had four kids. I help out with repairing furniture and other household items when I'm not cooking or raising kids. I've actually gotten pretty good at tying knots through it all.
+Eiche: Oh... I see... Uh, where to start... I'm Eiche. I'm 21 years old. I've had four kids. I help out with repairing furniture and other household items when I'm not cooking or raising kids. I've actually gotten pretty good at tying knots through it all.[next=2]
 Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 
 ~ getToKnowStart
@@ -23,6 +23,7 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 		Maskmaker: Do your friends tie knots too?
 		Eiche: Yes, we all repair furniture together. One of my friends, Tofua, was into it and got me and my other friends into it.
 		- Who are your friends?
+			~ whoAreFriends
 			set locals.who_are_friends == true
 			Maskmaker: Who are your friends?
 			Eiche: Well, uh, there's Ika, Tofua like I mentioned, Nyasi, my partner Almia, and I guess Will too.
@@ -31,14 +32,19 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 			Maskmaker: So you're not the youngest one.
 			Eiche: Ya.
 			- What fun things do you do with friends? [if not locals.fun_friend_activities]
+				=> funThingsWithFriends
 			- How did you meet your partner? [if not locals.meet_partner]
+				=> howMetPartner
 			- How was last seeing them like? [if not locals.last_friend_meeting]
+				=> finalSightOfFriends
 			- Move on with the interview
 				~ getToKnowYouToFirstQuestion
 				Maskmaker: It is a pleasure to meet you Eiche. The stars and the moon never pause for us, so let us move on.
 				=> firstStandardQuestion
-			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
 		- What fun things do you do with friends?
+			~ funThingsWithFriends
 			set locals.fun_friend_activities == true
 			Maskmaker: What other fun things do you do with your friends besides tie knots?
 			Eiche: We exercise, uh, I box with the boys. We do some competitive cup stacking sometimes since Nysasi loves it. I rarely win, but it's still fun. And... ya. That's mostly it.
@@ -51,7 +57,13 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 				Eiche: Ya, he ascended last year.
 				Maskmaker: Oh, I see... Maybe you can play with him again soon.
 				Eiche: Ya, that'd be nice.
-				- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				- Who are your friends? [if not locals.who_are_friends]
+					=> whoAreFriends
+				- How did you meet your partner? [if not locals.meet_partner]
+					=> howMetPartner
+				- How was last seeing them like? [if not locals.last_friend_meeting]
+					=> finalSightOfFriends
+				- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
 					=> getToKnowStart
 				- Move on with the interview
 					=> getToKnowYouToFirstQuestion
@@ -67,6 +79,7 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 				Eiche: Makes sense.
 				=> getToKnowStart
 		- How did you meet your partner?
+			~ howMetPartner
 			set locals.meet_partner == true
 			Maskmaker: How did you meet your partner, Almia?
 			Eiche: We were cooking for some younger kids and started chatting. I made some jokes. She laughed at them. I remember we were making bronze fish stew with different vegetables but mostly potatoes. Things worked out from there I guess.
@@ -74,7 +87,7 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 			Eiche: Thanks, me too.
 			- How was last seeing them like?
 				=> finalSightOfFriends
-			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
 				=> getToKnowStart
 			- Move on with the interview
 				=> getToKnowYouToFirstQuestion
@@ -89,7 +102,7 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 			Maskmaker: I'm sorry.[wait=1] One day you may see them in heaven.
 			Eiche: I hope so.
 			Maskmaker: Sometimes to rise you must leave some things behind. We've all done so.
-			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
 				=> getToKnowStart
 			- Move on with the interview
 				=> getToKnowYouToFirstQuestion
@@ -100,7 +113,7 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 			~ knotsYouAreWrong
 			Maskmaker: No, it's always the best knot. There's no reason to use any other type of knot.
 			Eiche: You have more wisdom and experience than me.[wait=0.5] I'll trust you on this.
-			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
 				=> getToKnowStart
 			- Move on with the interview
 				=> getToKnowYouToFirstQuestion
@@ -118,14 +131,14 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 		- Okay, maybe you're right
 			~ knotsYouAreRight
 			Maskmaker: Okay, you make a fair point.
-			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
 				=> getToKnowStart
 			- Move on with the interview
 				=> getToKnowYouToFirstQuestion
 		- Let's agree to disagree
 			~ knotsLetUsDisagree
 			Maskmaker: I am not convinced but that is fine. We do not need to share the same view or opinion.
-			- Visit other topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
 				=> getToKnowStart
 			- Move on with the interview
 				=> getToKnowYouToFirstQuestion
@@ -156,7 +169,35 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 	Eiche: I like to fix and heal things. People, stuff, anything really.
 	Maskmaker: So you are a fixer?
 	Eiche: Kind of.
-	
+	- Why do you find pleasure in fixing things?
+		Maskmaker: Why do you find pleasure in fixing things?
+		Eiche: I don't know. It's just satisfying to see something broken become whole. To see something and, uh, know that it got there because of you.
+		Maskmaker: Nothing gets to its final form except with the blessing of Ocara.
+		Eiche: True. You are right. [wait=2]Everything that is built is because Ocara wills it. We are just tools in Ocara's hands.
+		Maskmaker: More than tools; servants. But yes. You have the right idea.
+		- Move on with the interview
+		=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			Maskmaker: Interested...
+			=> getToKnowStart
+	- What are you most proud of fixing?
+		Maskmaker: What are you most proud of fixing?
+		Eiche: This one time the grand hall table collapsed. It has 16 different legs, so when a few broke it damaged the rest. Me and some others worked together to fix the table the sanctuary's headmaster consistently sat at. [next=auto]
+		Eiche: It was challenging to work with such an antique but it was fun working together together. I was able to make something, uh, bigger and better than I could have made on my own.
+		Maskmaker: Splendid. And I hear confidence in your voice.
+		Eiche: Thank you honorable Maskmaker. I would love the opportunity to try to fix people though as a Priest.
+		Maskmaker: You don't want to be a reclaimer?
+		=> eicheWantsToBeAPriest
+	- What tools do you use?
+		Maskmaker: What tools do you use with fixing furniture?
+		Eiche: The usual. Hammers, levers, uh, nails, uh, rope. Standard things you would expect.
+		Maskmaker: No glued sawdust or wood shavings? Or a saw?
+		Eiche: Well ya, those too.
+		Maskmaker: Okay.
+		- Move on with the interview
+			=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			=> getToKnowStart
 	- Move on with the interview
 		=> getToKnowYouToFirstQuestion
 	- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
@@ -165,18 +206,159 @@ Eiche: I also enjoy playing sports, especially boxing. And ya. That's me.
 - Who's your favorite boxer? [if not locals.favorite_boxer]
 	~ getToKnowFavoriteBoxer
 	set locals.favorite_boxer == true
+	Maskmaker: Who's your favorite boxer?
+	Eiche: Oh man, I have... uh... I don't have one.
+	Maskmaker: You don't have a favorite boxer?
+	Eiche: No... I don't. I like them all. I wish I could watch one in real life but right now I just settle for books.
+	#Eiche: Probably Kinre Da'Noxul. His speed and power and dodging capabilities are just incredible. Everytime I see old recordings of his fights I get riled up.
+	- What do the books teach?
+		Maskmaker: What do boxing books teach you besides history?
+		Eiche: I found one from before the reckoning that showed Muhammed Ali, Mike Tyson, and a few others. It goes over form, strategy, and some of the boxing history. It's an old book that somehow ended up in the sanctuary.[next=auto]
+		Eiche: No one really knows how it showed in the sanctuary but it's been approved for use by the Sanctuary Headmaster. I promise I'm not breaking any rules.
+		~ boxingBookDetails
+		- It's a sin to lie
+			~ sinToLieBoxing
+			Maskmaker: It is a sin to lie. Do not cover the truth.
+			Eiche: I promise I'm telling the truth. May Ocara strike me down if I'm not.
+			Maskmaker: ...[wait=3] let us move on.
+			=> firstStandardQuestion
+		- I believe you
+			~ believeBoxingStory
+			Maskmaker: Interested. Ascender, do not worry. I believe you. There are many things we cannot explain, but Ocara watches over us nonetheless.
+			Eiche: I'm glad you believe me.
+			- Move on with the interview
+				=> getToKnowYouToFirstQuestion
+			- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+				=> getToKnowStart
+		- Tell me more [if not locals.moreBoxingInfo]
+			set locals.moreBoxingInfo == true
+			Maskmaker: Interested. Tell me more.
+			Eiche: The book goes into how you mustn't walk slowly since reaction time is critical to defending yourself. If you are not ready to jump then you could move too slow out of the way. It talks about training, dueling, and when to use which type of punch.[next=auto]
+			Eiche: It also goes into the rules of boxing and the history of how those rules evolved over time.
+			Maskmaker: Do you train for boxing?
+			Eiche: Yes, I love the rush and the way I feel when I do it.
+			Maskmaker: Even though the body is tainted, we can still rebuild with tainted tools, strong tainted tools. Always keep your health well.
+			Eiche: Yes honorable Maskmaker.
+			=> boxingBookDetails
+	- You're using computers outside of work?
+		Maskmaker: You hesitated. Are you using computers to watch old boxing matches? That's strictly for priests.
+		Eiche: No, I'm not. I promise that I was just thinking about all of the different historical boxers in the book I have. I would never break the rules and go against the will of Ocara for my own pleasure. I remember the lessons taught of how such usage[next=auto]
+		Eiche: lead to humanity's fall and the reckoning. I know what that kind of stuff can do to people's minds and beliefs. I use computers strictly for work and nothing else. No boxing watching or anything like that. No leaked footage or anything.
+		- It's a sin to lie
+			=> sinToLieBoxing
+		- I believe you
+			=> believeBoxingStory
+	- Why is boxing inspiring?
+		Maskmaker: Why do you find boxing inspiring?
+		Eiche: It pushes the human body to its limits. I like approaching those limits. It makes me feel alive. And it helps me prepare to serve Ocara after I descend. A stronger body let's me do more.
+		Maskmaker: Yes, but don't worship feelings or your body.
+		Eiche: Yes honorable Maskmaker. Thank you.
+		Maskmaker: You are blessed.
+		- Move on with the interview
+			=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			=> getToKnowStart
+	
 - What are your kids like? [if not locals.kid_info]
 	set locals.kid_info == true
+	Maskmaker: Four kids. That's a good amount, especially as we rebuild. What are they like?
+	Eiche: They're great.[wait=1] Good, normal kids.
+	Maskmaker: Are you going to miss them?
+	Eiche: Who wouldn't miss their kids?
+	Maskmaker: I've met a few. You don't seem like them though.
+	Eiche: What happened to them?
+	- Ordained as priests
+		Maskmaker: They were ordained as priests. They showed that they were fully committed to serving Ocara rather than any human. Priests must be completely dedicated to Ocara more than their own family.
+		Eiche: Oh, I see. Will my answer disqualify me from being a priest then?
+		Maskmaker: Not necessarily.
+		Eiche: Okay.
+		- Move on with the interview
+			=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			=> getToKnowStart
+	- Can't say
+		Maskmaker: I cannot say. That kind of information is confidential.
+		Eiche: Yes honorable maskmaker. I'm sorry for asking.
+		- Move on with the interview
+			=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			=> getToKnowStart
+	- No time to explain
+		Maskmaker: We do not have time to talk about such things. Let us focus on you.
+		Eiche: Okay.
+		- Move on with the interview
+			=> getToKnowYouToFirstQuestion
+		- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+			=> getToKnowStart
+	- Move on with the interview
+		=> getToKnowYouToFirstQuestion
+	- Visit other personal topics [if not locals.knots_asked or not locals.repair_furniture or not locals.favorite_boxer or not locals.kid_info]
+		=> getToKnowStart
 - Move on with the interview
 	=> getToKnowYouToFirstQuestion
 
 ~ firstStandardQuestion
+Maskmaker: Eiche, how do you wish to be remembered?
+Eiche: As a devoted servant who lifts people to Ocara.
+Maskmaker: Who do you look up to?
+Eiche: The grand prist Yolru Stephenson who leads us.
+Maskmaker: Do you want people to remember you?
+Eiche: Ya, I do.
+Maskmaker: Why does being remembered matter?
+Eiche: ...[wait=3] ...[wait=3] ...[wait=3] It's the way you leave your mark on history.
+Maskmaker: But why does that matter?
+Eiche: ...[wait=3] Because of the legacy you leave.
+- Being remembered is folly
+	Maskmaker: If you focus on being remembered then you focus on yourself. As the united school we flow with Ocara's will. You likely will not be remembered, but so is most people. Ocara did not make us so that we could boost our pride through fame and[next=auto]
+	Maskmaker: being remembered. We came here to live and to serve and to be a part of something greater than ourselves. Do not seek fame or being remembered; it is an empty goal.
+	Eiche: Yes honorable maskmaker.
+- I agree
+	Maskmaker: Legacy is important. We are building the legacy and foundation that future generations will prosper from. We heal the world so they may live.
+	Eiche: Ya, exactly like that. That's what I was getting at.
+- Move on
+	Maskmaker: I see. Thank you.
+	Eiche: The tide rises.
+	Maskmaker: ... Yes.
+	Eiche: ...
 
-~secondStandardQuestion
+~ secondStandardQuestion
+Maskmaker: Eiche, when I ask the caretaker who raised you, Hatuthi, who you are what do you think she will say?
+Eiche: ...[wait=3] ...[wait=3] She'll say that I was a hardworking boy who loved Ocara and Ocara's children. That I was a joy to be around and worked for the wider community.
+Maskmaker: If she says the opposite of what you say you do know that you'll be sent to the mines?
+Eiche: ...[wait=5] No.
+- It is a sin to lie
+	Maskmaker: It is a sin to lie.
+	Eiche: ...[wait=3] I wasn't her favorite. She got annoyed if I stayed up late or talked with girls, like Almia, outside of scheduled social times. Hatuthi was well intentioned but she always seemed more worried about following protocol rather than living.[next=auto]
+	Eiche: But I was just a kid. I've matured from then.
+	Maskmaker: Do you see the wisdom in Hatuthi's teachings of discipline and control?
+	Eiche: Ya, I do now. That lack of discipline and forward thinking is what lead to the reckoning.
+	Maskmaker: Yes, Hatuthi was trying to help, not hurt.
+	Eiche: I see that now.
+- Okay, just checking
+	Maskmaker: Just wanted to let you know. Please be honest.
+	Eiche: ... Yes, thank you for informing me. I admit that I left out a few details of how we had a few moments where I was not her favorite. Just be aware that sometimes she tends to be negative and focus on the worst moments.
+	Maskmaker: Okay, thank you for sharing more details.
+	Eiche: You're welcome.
 
-~thirdStandardQuestion
 
-~closingQuestion
+~ thirdStandardQuestion
+Maskmaker: Eiche, what do you think Ocara wills for you?
+Eiche: To serve.
+Maskmaker: Serve how?
+Eiche: Where the need is greatest.
+Maskmaker: Which is where?
+Eiche: Inspiring and fixing the hearts of the people to serve with purpose and joy.
+Maskmaker: I see. Thank you.
+
+~ closingQuestion
+Maskmaker: Eiche, will the tide rise or fall?
+Eiche: It must rise.
+Maskmaker: Hopeful.
+Eiche: We must be.
+Maskmaker: Yes.[next=3]
+Maskmaker: Thank you Eiche for your time. I will now build your new face.
+Eiche: Yes honorable maskmaker. The tide rises.
+Maskmaker: The tide rises.
 
 
 
