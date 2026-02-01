@@ -39,6 +39,8 @@ signal bridge_mutated(call_index: int)
 
 var speak = 0
 
+var endingchosen = "none"
+
 ## The list of globals that dialogue can query
 var game_states: Array = []
 

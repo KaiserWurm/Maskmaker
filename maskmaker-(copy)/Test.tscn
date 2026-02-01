@@ -33,12 +33,12 @@ autoplay = true
 volume_db = -12.0
 
 [node name="Button" type="Button" parent="." unique_id=388958803]
-offset_left = 1609.0
-offset_top = 480.0
-offset_right = 1796.0
-offset_bottom = 546.0
+offset_left = 1464.0
+offset_top = 521.0
+offset_right = 1683.0
+offset_bottom = 587.0
 theme = ExtResource("7_vwb7u")
-text = "Select Mask"
+text = "  Select Mask  "
 
 [node name="Mask Selection" type="CanvasLayer" parent="." unique_id=771838640]
 visible = false

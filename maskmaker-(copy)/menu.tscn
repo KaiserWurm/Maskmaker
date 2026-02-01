@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://dhmq0cgh535gt"]
 
+[ext_resource type="Shader" uid="uid://cuq8s7eyl7n3t" path="res://menu.gdshader" id="1_ecwwl"]
 [ext_resource type="Script" uid="uid://bhisuf7tbnsvj" path="res://start.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="2_kk3ma"]
 [ext_resource type="Script" uid="uid://be0ljahffghao" path="res://quit.gd" id="2_ouk20"]
 [ext_resource type="Script" uid="uid://b8ko7c7kvra8l" path="res://fullscreen.gd" id="3_mae5d"]
 [ext_resource type="PackedScene" uid="uid://cv1x2kcjg2y0w" path="res://click.tscn" id="4_4hy44"]
+[ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="4_nrnbx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqepy"]
+shader = ExtResource("1_ecwwl")
+shader_parameter/strength = 13
 
 [node name="StartScreen" type="Control" unique_id=1544959263]
 layout_mode = 3
@@ -13,16 +20,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1742293462]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.5028937, 0.99218386, 0.7431768, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802441091]
+material = SubResource("ShaderMaterial_iqepy")
+texture = ExtResource("2_kk3ma")
+offset = Vector2(960, 540)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=1043539332]
+[node name="Click" parent="." unique_id=300910494 instance=ExtResource("4_4hy44")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1043539332]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,41 +36,38 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect/HBoxContainer" unique_id=1254894543]
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1254894543]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nrnbx")
 theme_override_font_sizes/font_size = 50
 text = "The Maskmaker"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer" unique_id=342718650]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=342718650]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainer" unique_id=569051268]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=569051268]
 layout_mode = 2
 alignment = 1
 
-[node name="Start" type="Button" parent="ColorRect/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1481157179]
+[node name="Start" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1481157179]
 layout_mode = 2
 text = "Start Game"
 script = ExtResource("1_lti8b")
 
-[node name="Quit" type="Button" parent="ColorRect/HBoxContainer/MarginContainer/VBoxContainer" unique_id=658562690]
+[node name="Quit" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=658562690]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("2_ouk20")
 
-[node name="Fullscreen" type="CheckButton" parent="ColorRect/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1608173229]
+[node name="Fullscreen" type="CheckButton" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1608173229]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Fullscreen"
 script = ExtResource("3_mae5d")
 
-[node name="Click" parent="." unique_id=300910494 instance=ExtResource("4_4hy44")]
-
-[connection signal="pressed" from="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Start" to="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_pressed"]
-[connection signal="toggled" from="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Quit" to="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_quit_toggled"]
-[connection signal="toggled" from="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Fullscreen" to="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Fullscreen" method="_on_toggled"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Start" to="HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_pressed"]
+[connection signal="toggled" from="HBoxContainer/MarginContainer/VBoxContainer/Quit" to="HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_quit_toggled"]
+[connection signal="toggled" from="HBoxContainer/MarginContainer/VBoxContainer/Fullscreen" to="HBoxContainer/MarginContainer/VBoxContainer/Fullscreen" method="_on_toggled"]
