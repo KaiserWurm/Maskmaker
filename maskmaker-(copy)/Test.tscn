@@ -2,17 +2,14 @@
 
 [ext_resource type="Script" uid="uid://by2gu5f2vuiuf" path="res://test.gd" id="1_njov2"]
 [ext_resource type="Resource" uid="uid://c2nu7bg4krw5s" path="res://Testlog.dialogue" id="2_8tn2x"]
-[ext_resource type="Texture2D" uid="uid://biw6ksndl587l" path="res://GGJ Maskmaker Game Jam/Art/temp_background.jpg" id="3_ivycn"]
 [ext_resource type="Texture2D" uid="uid://d0lymxosqxfes" path="res://GGJ Maskmaker Game Jam/Art/temp_man.png" id="4_q1uvj"]
+[ext_resource type="AudioStream" uid="uid://6yg7klb4d7ps" path="res://GGJ Maskmaker Game Jam/Music/Background Music.wav" id="5_aq4fw"]
 [ext_resource type="Texture2D" uid="uid://jijw1c7ax5ic" path="res://GGJ Maskmaker Game Jam/Art/temp_window.png" id="5_qs82m"]
+[ext_resource type="PackedScene" uid="uid://cv1x2kcjg2y0w" path="res://click.tscn" id="6_ivycn"]
 
 [node name="Node2D" type="Node2D" unique_id=1286026568]
 script = ExtResource("1_njov2")
 words = ExtResource("2_8tn2x")
-
-[node name="TempBackground" type="Sprite2D" parent="." unique_id=127694576]
-texture = ExtResource("3_ivycn")
-centered = false
 
 [node name="TempMan" type="Sprite2D" parent="." unique_id=1375537068]
 texture = ExtResource("4_q1uvj")
@@ -21,3 +18,11 @@ centered = false
 [node name="TempWindow" type="Sprite2D" parent="." unique_id=416451783]
 texture = ExtResource("5_qs82m")
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=378548483]
+stream = ExtResource("5_aq4fw")
+volume_db = -15.0
+autoplay = true
+
+[node name="Click" parent="." unique_id=300910494 instance=ExtResource("6_ivycn")]
+volume_db = -12.0

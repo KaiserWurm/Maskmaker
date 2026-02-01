@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhisuf7tbnsvj" path="res://start.gd" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://be0ljahffghao" path="res://quit.gd" id="2_ouk20"]
 [ext_resource type="Script" uid="uid://b8ko7c7kvra8l" path="res://fullscreen.gd" id="3_mae5d"]
+[ext_resource type="PackedScene" uid="uid://cv1x2kcjg2y0w" path="res://click.tscn" id="4_4hy44"]
 
 [node name="StartScreen" type="Control" unique_id=1544959263]
 layout_mode = 3
@@ -62,6 +63,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Fullscreen"
 script = ExtResource("3_mae5d")
+
+[node name="Click" parent="." unique_id=300910494 instance=ExtResource("4_4hy44")]
 
 [connection signal="pressed" from="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Start" to="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_pressed"]
 [connection signal="toggled" from="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Quit" to="ColorRect/HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_quit_toggled"]

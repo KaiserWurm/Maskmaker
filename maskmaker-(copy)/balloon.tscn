@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="2_jj3vs"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="AudioStream" uid="uid://cntbxwbg7e01u" path="res://GGJ Maskmaker Game Jam/Music/Voices/Click.wav" id="5_4nd2f"]
 [ext_resource type="AudioStream" uid="uid://cl7wru77is6yk" path="res://GGJ Maskmaker Game Jam/Music/Voices/Character B.wav" id="5_wxbh2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -191,6 +192,9 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 size_flags_vertical = 3
 text = "Response example"
+
+[node name="clicker" type="AudioStreamPlayer" parent="Balloon" unique_id=127889027]
+stream = ExtResource("5_4nd2f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1966411106]
 unique_name_in_owner = true
