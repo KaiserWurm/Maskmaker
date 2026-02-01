@@ -24,6 +24,9 @@ extends CanvasLayer
 @onready var p1 = 1.1
 @onready var p2 = 0.9
 
+## mood of character
+@onready var mood = "neut"
+
 ## Temporary game states
 var temporary_game_states: Array = []
 

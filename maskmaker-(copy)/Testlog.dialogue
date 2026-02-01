@@ -11,8 +11,11 @@ Tilda: I suppose we must.
 	=> personal
 - Why are you nervous?
 - What type of mask would you like?
-- Are you ready to ascend?
+- Are you ready to ascend? 
 - Do you have any questions for me?
+- End Conversation
+	=> END!
+
 
 ~ personal
 Maskmaker: So, tell me about yourself.
