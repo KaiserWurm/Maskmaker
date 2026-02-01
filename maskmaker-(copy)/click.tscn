@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cv1x2kcjg2y0w"]
+
+[ext_resource type="AudioStream" uid="uid://cntbxwbg7e01u" path="res://GGJ Maskmaker Game Jam/Music/Voices/Click.wav" id="1_ukidl"]
+[ext_resource type="Script" uid="uid://p3fokd5ot28r" path="res://click.gd" id="2_yjt5n"]
+
+[node name="Click" type="AudioStreamPlayer" unique_id=300910494]
+stream = ExtResource("1_ukidl")
+script = ExtResource("2_yjt5n")

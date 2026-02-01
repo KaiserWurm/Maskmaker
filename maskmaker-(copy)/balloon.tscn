@@ -2,69 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bcu8txnrcuxcw" path="res://balloon.gd" id="1_4emby"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="2_jj3vs"]
+[ext_resource type="Theme" uid="uid://do4lnijx2yxd6" path="res://ballontheme.tres" id="2_x2iu8"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="AudioStream" uid="uid://cntbxwbg7e01u" path="res://GGJ Maskmaker Game Jam/Music/Voices/Click.wav" id="5_4nd2f"]
 [ext_resource type="AudioStream" uid="uid://cl7wru77is6yk" path="res://GGJ Maskmaker Game Jam/Music/Voices/Character B.wav" id="5_wxbh2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.329412, 0.329412, 0.329412, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
-bg_color = Color(0.121569, 0.121569, 0.121569, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.6, 0.6, 0.6, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkmqt"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="Theme" id="Theme_qq3yp"]
-default_font = ExtResource("2_jj3vs")
-default_font_size = 40
-Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
-Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
-Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
-Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
-MarginContainer/constants/margin_bottom = 15
-MarginContainer/constants/margin_left = 30
-MarginContainer/constants/margin_right = 30
-MarginContainer/constants/margin_top = 15
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+[ext_resource type="AudioStream" uid="uid://dcedpamwuhbuj" path="res://GGJ Maskmaker Game Jam/Music/Voices/BWWONG.wav" id="7_1xemn"]
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -112,10 +54,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1330.0
+offset_left = 1198.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_qq3yp")
+theme = ExtResource("2_x2iu8")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=570560818]
 layout_mode = 1
@@ -192,9 +134,15 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Response example"
 
+[node name="clicker" type="AudioStreamPlayer" parent="Balloon" unique_id=127889027]
+stream = ExtResource("5_4nd2f")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1966411106]
 unique_name_in_owner = true
 stream = ExtResource("5_wxbh2")
+
+[node name="BWWONG" type="AudioStreamPlayer" parent="." unique_id=1892016844]
+stream = ExtResource("7_1xemn")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://br4p1pln2qlqv"]
+
+[ext_resource type="Texture2D" uid="uid://bv553m1sl25nh" path="res://icon.svg" id="1_v68l7"]
+[ext_resource type="Script" uid="uid://cxqi6iir0apw" path="res://mask_1.gd" id="2_pex5a"]
+[ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="3_pex5a"]
+[ext_resource type="AudioStream" uid="uid://dtjvjma7olxvq" path="res://GGJ Maskmaker Game Jam/Music/Discovery.wav" id="4_0d4cl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4cl"]
+bg_color = Color(0, 0, 0, 0.49411765)
+corner_detail = 20
+
+[node name="TestMask" type="TextureRect" unique_id=78403653]
+texture = ExtResource("1_v68l7")
+script = ExtResource("2_pex5a")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=669219226]
+unique_name_in_owner = true
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 1234.0
+offset_top = 97.0
+offset_right = 1734.0
+offset_bottom = 897.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0d4cl")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1859206905]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=1998432866]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pex5a")
+theme_override_font_sizes/font_size = 40
+text = "test"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Discover" type="AudioStreamPlayer" parent="." unique_id=573067935]
+stream = ExtResource("4_0d4cl")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
