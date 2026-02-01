@@ -13,8 +13,6 @@ var endingbegun = false
 # Called when the node enters the scene tree for the first time.
 # Load the dialogue file here
 func _ready() -> void:
-	#for n in $"Mask Selection/Panel/MarginContainer/GridContainer":
-		#print("whee")
 	DialogueManager.show_dialogue_balloon(words, "start")
 	rest = $TempMan.position.y
 
@@ -36,6 +34,6 @@ func _on_button_button_down() -> void:
 	$"Mask Selection".visible =  true
 	$Button.visible = false
 
-
 func _on_ending_button_down() -> void:
+	DialogueManager.endingchosen = "none"
 	get_tree().change_scene_to_file(nextscene)

@@ -142,6 +142,8 @@ func apply_dialogue_line() -> void:
 		_update_character_text(Color.CYAN, 0.02, 1.4, 1.2)
 	elif dialogue_line.character == "Laurus":
 		_update_character_text(Color.SEA_GREEN, 0.04, 1.0, 0.8)
+	elif dialogue_line.character == "Eiche":
+		_update_character_text(Color.YELLOW, 0.06, 0.9, 0.7)
 
 
 	dialogue_label.hide()
@@ -242,4 +244,9 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 			DialogueManager.speak = 1
 		else:
 			DialogueManager.speak = 0
+
+func alter_mood(newmood):
+	mood = newmood
 	
+func add_interest(newinterest):
+	interests.append(newinterest)

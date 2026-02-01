@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="2_kk3ma"]
 [ext_resource type="Script" uid="uid://be0ljahffghao" path="res://quit.gd" id="2_ouk20"]
 [ext_resource type="Script" uid="uid://b8ko7c7kvra8l" path="res://fullscreen.gd" id="3_mae5d"]
-[ext_resource type="PackedScene" uid="uid://cv1x2kcjg2y0w" path="res://click.tscn" id="4_4hy44"]
+[ext_resource type="PackedScene" uid="uid://djoaamchonsc8" path="res://click.tscn" id="4_4hy44"]
 [ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="4_nrnbx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iqepy"]
@@ -53,10 +53,23 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 alignment = 1
 
-[node name="Start" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1481157179]
+[node name="Chapter 1" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1481157179]
 layout_mode = 2
-text = "Start Game"
+text = "Chapter 1"
 script = ExtResource("1_lti8b")
+nextscene = "uid://scy8ycf86rna"
+
+[node name="Chapter 2" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1525262412]
+layout_mode = 2
+text = "Chapter 2"
+script = ExtResource("1_lti8b")
+nextscene = "uid://6i527eyxmdvq"
+
+[node name="Chapter 3" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1815041940]
+layout_mode = 2
+text = "Chapter 3"
+script = ExtResource("1_lti8b")
+nextscene = "uid://3j372ojgi7yl"
 
 [node name="Quit" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=658562690]
 layout_mode = 2
@@ -68,6 +81,8 @@ layout_mode = 2
 text = "Fullscreen"
 script = ExtResource("3_mae5d")
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Start" to="HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_pressed"]
-[connection signal="toggled" from="HBoxContainer/MarginContainer/VBoxContainer/Quit" to="HBoxContainer/MarginContainer/VBoxContainer/Start" method="_on_quit_toggled"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Chapter 1" to="HBoxContainer/MarginContainer/VBoxContainer/Chapter 1" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Chapter 2" to="HBoxContainer/MarginContainer/VBoxContainer/Chapter 2" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Chapter 3" to="HBoxContainer/MarginContainer/VBoxContainer/Chapter 3" method="_on_pressed"]
+[connection signal="toggled" from="HBoxContainer/MarginContainer/VBoxContainer/Quit" to="HBoxContainer/MarginContainer/VBoxContainer/Chapter 1" method="_on_quit_toggled"]
 [connection signal="toggled" from="HBoxContainer/MarginContainer/VBoxContainer/Fullscreen" to="HBoxContainer/MarginContainer/VBoxContainer/Fullscreen" method="_on_toggled"]

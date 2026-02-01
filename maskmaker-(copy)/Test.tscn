@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://d0lymxosqxfes" path="res://GGJ Maskmaker Game Jam/Art/temp_man.png" id="4_q1uvj"]
 [ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="4_vwb7u"]
 [ext_resource type="AudioStream" uid="uid://6yg7klb4d7ps" path="res://GGJ Maskmaker Game Jam/Music/Background Music.wav" id="5_aq4fw"]
-[ext_resource type="PackedScene" uid="uid://cv1x2kcjg2y0w" path="res://click.tscn" id="6_ivycn"]
-[ext_resource type="Script" uid="uid://3kn0e0ejld8h" path="res://mask_selection.gd" id="7_c4vo5"]
+[ext_resource type="PackedScene" uid="uid://djoaamchonsc8" path="res://click.tscn" id="6_ivycn"]
+[ext_resource type="Script" path="res://mask_selection.gd" id="7_c4vo5"]
 [ext_resource type="Theme" uid="uid://do4lnijx2yxd6" path="res://ballontheme.tres" id="7_vwb7u"]
-[ext_resource type="PackedScene" uid="uid://br4p1pln2qlqv" path="res://test_mask.tscn" id="8_qs82m"]
+[ext_resource type="PackedScene" uid="uid://bclblgb38boyo" path="res://test_mask.tscn" id="8_qs82m"]
 [ext_resource type="Texture2D" uid="uid://eb8668qesap7" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Miner Mask.png" id="10_rdfvj"]
-[ext_resource type="PackedScene" uid="uid://oodj7luwff2w" path="res://dustmotes.tscn" id="10_vwb7u"]
+[ext_resource type="PackedScene" uid="uid://c0aylxe0b6oay" path="res://dustmotes.tscn" id="10_vwb7u"]
 [ext_resource type="Resource" uid="uid://b3p5rb4kdqvhn" path="res://Test Epilogue.dialogue" id="11_iw7q2"]
 [ext_resource type="Texture2D" uid="uid://ctkylrn4cgws3" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Doctor Mask.png" id="12_q8vq6"]
 [ext_resource type="Texture2D" uid="uid://p6p4x6agajr3" path="res://GGJ Maskmaker Game Jam/Art/Placeholders/Entertainer Mask.png" id="13_ctmup"]
@@ -22,7 +22,7 @@
 [node name="Node2D" type="Node2D" unique_id=1286026568]
 script = ExtResource("1_njov2")
 words = ExtResource("2_8tn2x")
-nextscene = "uid://c353s3yv2kwea"
+nextscene = "uid://6i527eyxmdvq"
 discovery = ExtResource("3_iw7q2")
 
 [node name="TempMan" type="Sprite2D" parent="." unique_id=1375537068]

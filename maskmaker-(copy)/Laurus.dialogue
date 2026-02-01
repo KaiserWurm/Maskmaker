@@ -1,41 +1,142 @@
 ~ start
 Maskmaker: The tide rises.
-Laurus: The tide rises.
-Maskmaker: How are you doing?
-Laurus: I'm ready to ascend.
-Maskmaker: Then let's get started.
-~ home
-- Tell me about yourself.
-	Laurus: I'm Laurus. I like to make things.
-	=> Personal
-- What mask would you like?
-	Laurus: I want to be part of the clergy, doesn't everyone?
-	=> Mask
+Unknown ascender: The tide rises.
+Maskmaker: What is your name?
+Unknown ascender: I'm Laurus.
+Maskmaker: And who is Laurus?
+Laurus: (Ok, I practiced this question with my partner)
+Laurus: I'm a person of simple pleasures. I don't really feel like I have a passion in life, but I find joy in the little things.
+Maskmaker: Very good.
+=> home
 
-~ Personal
-- What do you like to make?
-	Laurus: Small carvings, mostly of what I think the surface will look like.
-	Laurus: I'll admit, I know that bone is unclean, but it carves so easily that sometimes I use it anyway. [if mood == "open"]
-	Laurus: Will I be able to bring some of my carvings with me?
-	Maskmaker: No child, O'cara demands we leave our physical belongings just as much as she demands our spiritual self to be washed in the waves. [#mood = "open"]
+~ home
+- What are your pastimes?
+	Maskmaker: What are your pastimes?
+	Laurus: When I was little I liked to watch bugs. [if mood == "neut"]
+	Laurus: This might sound somewhat buggy, but I like to watch the ants crawl and dig. [if mood == "open"]
+	Laurus: I wonder if that is how Ocara views us. Like bugs.
+	Laurus: I also like to dance, sing, and spend time with my children.
+	=> personal
+- What mask would you like?
+	Laurus: I'm not sure. [if mood == "upset"]Isn't that your job?[/if]
+	=> Mask
+- End conversation
+	Maskmaker: I have all I need.
+	=> end
+
+
+
+~ personal
+- What kind of bugs?
+	Maskmaker: What kind of bugs [if mood== "neut"]did[/if][if mood == "open"]do[/if] you watch?
+	Laurus: Ants mostly, that's what are the most common.
+	Laurus: I also like to watch the butterflies and moths. 
+	Laurus: The way the moths follow the light of the butterflies makes it look like they are dancing.  [do! interests.append("Doctor")]
+	Laurus: I sometimes take the dead ones I find and preserve them to show to my friends. [if mood == "open"]
+	Laurus: Will I be able to bring some of my collection with me? [if mood == "open"]
+	Maskmaker: No child, Ocara demands we leave our physical belongings just as much as she demands our spiritual self to be washed in the waves. [if mood == "open"]
+	Laurus: Oh... [do! alter_mood("neut")]
+	=> personal
+- You like to dance?
+	Maskmaker: You like to dance? [if interests.has("Doctor")]Is it because of the insects?[/if]
+	Laurus: It feels good to move my body. 
+	Laurus: I learned from my mother. She was a great dancer. [do! interests.append("Entertainer")]
+	Laurus: I actually think that dancing might have been what sparked my interest in insects. [if interests.has("Doctor")] [do! mood="open"]
+	=> personal
+- How many children do you have?
+	Maskmaker: How many children do you have?
+	Laurus: I have two, the oldest is 8 and the younger one just turned 3. 
+	=> Children
+- (Move on with the interview)
 	=> home 
-- You must be very creative.
-	Laurus: I just carve whatever comes to mind. [if mood == "open"] Though mostly I carve what I imagine trees look like [/if] [do! mood = "open"]
-	=> home 
-- (Move on) [#mood = "neut"]
-	=> home 
+
+
+~ Children
+- What are some of the things that you do with your kids?
+	Maskmaker: What are some of the things that you do with your kids?
+	Laurus: One of our favorite activities is dancing together.
+	Laurus: I love to teach them to dance in the same way my mother taught me. [if interests.has("Entertainer")]  [do! mood="open"]
+	Laurus: We also do a lot of cup stacking, though my kids are more fond of that than I am.
+	=> Children
+- Will you miss them?
+	Maskmaker: Will you miss them?
+	Laurus: What kind of question is that? [if mood == "neut"] [do! mood = "upset"][/if]
+	Laurus: Why would I miss them?
+	Laurus: Ascending is replacing pain with joy.
+	Laurus: I may not know what will come after I rise, but I do know that Ocara loves us and would not let us suffer in heaven.
+	Laurus: I do fear how they will get on without me, but I managed when my parents ascended. [if mood == "open"]
+	=> Children
+- (Move on with the interview)
+	=> home
+
+
 
 ~ Mask
-- I didn't.
-	Laurus: Laurus: Oh… [if mood == "open"]How did you end up clergy then?[/if]
-	- Explain [if mood == "open"]
-		Maskmaker: It was probably 30 years ago by now, but the maskmaker that was talking to me saw something in me that I didn’t see myself.
-		Maskmaker: They saw my resolve and my curiosity as well as my devotion to O’cara.
-		Maskmaker: I did not show my devotion in the same way as the other clergy, but my love of the oceanic made my 10 years on the surface wonderful.
-		=> Mask
-	- Sometimes the currents pull you in ways you don’t expect.
-		=> Mask
-	- We’re not here to talk about my story.
+- What roles do you fill here?
+	Laurus: Well I am a parent. [if interests.has("Doctor")]And I move the insects around when they bother the others.[/if] [if interests.has("Entertainer")]I also teach a weekly dance class.[/if]
+	- (ask about the children)
+		Maskmaker: Tell me more about your children.
+		=> Children
+	- (ask about their other roles) [if interests.has("Doctor") || interests.has("Entertainer")]
+		Maskmaker: Tell me more about what you do for others.
+		=> personal
+- How would you feel if you...
+	Maskmaker: How would you feel if you received a(n)
+	- Miner Mask
+		Laurus: Mining is dangerous work, but it is important. I will gladly accept any role I get. [if interests.has("Doctor")]And I would get to keep my bug collection.[/if]
+	- Doctor Mask
+		Laurus: [if interests.has("Doctor")]I think it would suit me well. [if mood == "open"]People aren't all that different from bugs.[/if][/if] I know that bodies are tainted[if mood == "open"]even though it never really bothered me[/if], but will gladly accept any role I get.
+	- Entertainer Mask
+		Laurus: I could probably do that[if interests.has("Entertainer")]I do have stage fright, but I'm sure Ocara can help me work around it.[/if]
+	- Reclaimer Mask
+		Laurus: I'm a disasterous builder. I mean, I would try, but I don't think I would do very well.
+	- Gardener Mask
+		Laurus: I don't know much about plants and I don't care much for them, but I would learn.
+	- Priest Mask
+		Laurus: I mean most people want to be priests, right?
+		- I didn't
+			Laurus: Laurus: Oh... [if mood == "open"]How did you end up clergy then?[/if]
+			- Explain [if mood == "open"]
+				Maskmaker: It was probably 30 years ago by now, but the maskmaker that was talking to me saw something in me that I didn't see myself.
+				Maskmaker: They saw my resolve and my curiosity as well as my devotion to Ocara.
+				Maskmaker: I did not show my devotion in the same way as the other clergy, but my love of the oceanic made my 10 years in heaven wonderful.
+				=> Mask
+			- Sometimes the currents pull you in ways you don't expect. [do! mood = "neut"]
+				=> Mask
+			- We're not here to talk about my story. [do! mood = "upset"]
+				=> home
+		- The clergy receive great honors...
+			Maskmaker: But others find more fulfilling currents in life.
+			Laurus: I guess. [do! mood = "neut"]
+			=> home
+		- Likely.
+			Maskmaker: The clergy hold a great deal of power [wait=1]and a great deal of responsibility.
+			Laurus: I can handle it! [if interests.has("Entertainer")]I've taught the other children since I was 12.[/if]
+			=> Mask
+	- Move to other topics
 		=> home
-- The clergy may receive great honors, but others find more fulfilling currents in life.
-	=> home
+
+~ miner
+	Maskmaker: I have chosen the miner mask for you. Your job will be hard work, but it will be the work that glorifies Ocara. [if interests.has("Doctor")]And this way you may keep your bug collection.[/if]
+	Some Years Later: Laurus has died young due to a mining accident. That is not uncommon for a miner, but it saddens you all the same. 
+	SOme Years Later: You still remember the brief conversation you shared. It is not often you see such a devoted soul.
+~ doctor
+	Maskmaker: I have chosen the doctor mask for you. You will give aid to the children here and will be able to travel to heaven and back in order to disposed of the bodies of the tainted.
+	Some Years Later: Laurus has bloomed under the role of doctor. Last year when you fractured your finger Laurus was able to fix you up in no time. They seem to be happy.
+~ entertainer
+	Maskmaker: I have chosen the entertainer mask for you. Your skills will help others devote more to their work[if interests.has("Entertainer")], especially your abilities of dance[/if].
+	Some Years Later: Laurus has not done well as an entertainer. They were excited at first, but aprehensive about their abilities.
+	Some Years Later: Laurus' stage fright ended up debilitating their career. An entertainer that cannot perform is of no use. [if interests.has("Entertainer")]
+~ reclaimer
+	Maskmaker: I have chosen the entertainer mask for you. You will have the privilege of building up heaven physically.
+	Some Years Later: Laurus was not cut out for reclaimer. A building that they had revived suddenly colapsed on a group of gardeners, killing everyone.
+	Some Years Later: The guilt of it all was too much for Laurus and they returned back to the ocean far before their time.
+~ gardener
+	Maskmaker: I have chosen the gardener mask for you. Your help in bringing life back to heaven is revered and you will recieve many blessings.
+	Some Years Later: Laurus is a capable gardener, though a bit apathetic. Laurus sent a letter to you a while back. They seemed...[wait=.5] melancholy.
+~ priest
+	Maskmaker: I have chosen the priest mask for you. Rejoice, for this role is sacred and blessed. [if interests.has("Entertainer")]Your skills of teaching will be well used.[/if]
+	Some Years Later: Laurus comes to visit often. They are doing well, but the bright spirit they once had has somewhat dimmed. [if interests.has("Entertainer")]Teaching is a fulfilling career, but Laurus has confided that they sneak away at night sometimes to dance in the moonlight.[/if]
+ 
+~ end
+=> END!
