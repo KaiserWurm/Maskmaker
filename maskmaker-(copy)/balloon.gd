@@ -128,8 +128,12 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	##if dialogue_line.character == "Maskmaker":
-	##	%CharacterLabel.color
+	if dialogue_line.character == "Maskmaker":
+		%CharacterLabel.add_theme_color_override("default_color", Color.RED)
+		%DialogueLabel.seconds_per_step = 0.04
+	elif dialogue_line.character == "Tilda":
+		%CharacterLabel.add_theme_color_override("default_color", Color.CYAN)
+		%DialogueLabel.seconds_per_step = 0.02
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
