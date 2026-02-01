@@ -359,23 +359,63 @@ Maskmaker: Yes.[next=3]
 Maskmaker: Thank you Eiche for your time. I will now build your new face.
 Eiche: Yes honorable maskmaker. The tide rises.
 Maskmaker: The tide rises.
+=> END
 
-
-
-
-
-
-
-
-
-
-#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-#Nathan: Here are some choices.
-#- First one
-#	Nathan: You picked the first one.
-#- Second one
-#	Nathan: You picked the second one.
-#- Start again => start
-#- End the conversation => END
-#Nathan: For more information see the online documentation.
+~ miner
+Maskmaker: I've consulted with Ocara and determined that you shall be a miner. Your dexterity and skills with your hands will help you best serve Ocara there. I wish you well.
+Eiche: ... Nuked.[wait=1] I'm nuked.
+Maskmaker: Hold your tongue.
+Eiche: NUKE YOU!
+Maskmaker: SELFISH CHILD! BEGONE!
+Some Years Later: ...[wait=3] Eiche works through the ranks of miners and improves mining output for the mining colony. He keeps to himself for the most part, but is friendly towards other miners. His life is monotonous yet stable; it keeps him fit.
+Some Years Later: Even though Eiche seems upset years later at staying underground you feel glad that you made a call that improved society's industriousness.
+=> END!
+~ doctor
+Maskmaker: I've consulted with Ocara and determined that you shall be a doctor. You can give aid to either children below, like your children, or to people in New Heaven. I will leave the choice of where you serve medicine up to you.
+Eiche: ... [wait=2]So I can stay with my kids?
+Maskmaker: If you choose to do so.
+Eiche: Okay, maybe that won't be so bad.
+Maskmaker: Trust in Ocara's path for you.
+Eiche: ...[wait=2] I will.
+Maskmaker: Splendid. The tide rises.
+Eiche: The tide rises.
+Some Years Later: ...[wait=3] Eiche chose to stay with his kids rather than ascend to New Heaven. Almia has left for New Heaven and Eiche now lives raising his children in indirect ways. Eiche tries to hold on to nostalgia of his youth and it shows.[next=1]
+Some Years Later: You wonder what will happen to him once his kids ascend. Maybe one will remain with him.
+=> END!
+~ entertainer
+Maskmaker: I've consulted with Ocara and determined that you shall be an entertainer. You can share your cup stacking skills and boxing skills with the world to bring joy to others.
+Eiche: Oh man, a professional boxer. That sounds like fun.
+Maskmaker: I wish you the best.
+Eiche: Thank you!
+Some Years Later: ...[wait=3] Eiche was killed in a boxing match with a professional boxer in New Heaven. A blow to the head that left him unconcious and incapable of competing anymore. Scarce resources dictate that those who can't help with rebuilding be returned to Ocara. So he was put to rest.[next=2]
+Some Years Later: You had a lot of confidence in Eiche's physical abilities. It's a shame that he wasn't able to perform.
+=> END!
+~ reclaimer
+Maskmaker: I've consulted with ocara and determined that you shall be a reclaimer. You will find and fix the relics left for us to rebuild.
+Eiche: Oh, Okay.
+Maskmaker: You can probably use all of those knots you learned.
+Eiche: Ya, probably.
+Some Years Later: ...[wait=3] Eiche is flourishing as a reclaimer. His knot skills and construction skills are superb. He climbs the ranks and even helps lead one reclaiming construction project on some old ruins left behind from the reckoning.
+Some Years Later: You smile when you find out the news. Another one happy and working where Ocara can best use him.
+=> END!
+~ gardener
+Maskmaker: I've consulted with ocara and determiend that you shall be a gardener. You are strong and work well with your hands. You can help feed the people so that they may continue to rebuild and grow.
+Eiche: Oh, Okay.
+Maskmaker: I wish you the best.
+Eiche: Thank you honorable maskmaker.
+Maskmaker: The tide rises.
+Eiche: The tide rises.
+Some Years Later: ...[wait=3] Eiche helps a community farm become a top performing farm. He goes through the same mundane work every year, but you hear that he's doing fine.
+Some Years Later: You later find out that he ran off into the wilderness to join a group of people who claim to follow a new prophet of Ocara. You always did have your doubts that he was made out for such religious work.
+=> END!
+~ priest
+Maskmaker: I've consulted with Ocara and determined that you shall be a priest of Ocara. May you serve her well and inspire the people to her call.
+Eiche: YES! THANK YOU!
+Maskmaker: Do not thank me. Thank Ocara for the path you have been set on.
+Eiche: Yes, thank Ocara!
+Some Years Later: ...[wait=3] Eiche failed some of the prist tests and has been placed in a remote colony to fulfill the small mining colony's religous needs. Eiche appears dull and bored with sermons and community messages.
+Some Years Later: You hear from a colleague that Eiche's religious influence has been terrible for the community he oversees, and the order is considering demoting him yet again.
+=> END!
+ 
+~ end
 => END
