@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cjljhwvtkfy1c"]
+
+[ext_resource type="Shader" uid="uid://cuq8s7eyl7n3t" path="res://menu.gdshader" id="1_fc23q"]
+
+[resource]
+shader = ExtResource("1_fc23q")
+shader_parameter/strength = 13

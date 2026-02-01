@@ -9,6 +9,7 @@ var rest
 var endingbegun = false
 @export_file("*.tscn") var nextscene: String
 @export var discovery: AudioStream
+@export var blur: Material
 
 # Called when the node enters the scene tree for the first time.
 # Load the dialogue file here
@@ -23,10 +24,13 @@ func _process(delta: float) -> void:
 		$TempMan/Sprite2D.position.y = rest
 	if DialogueManager.endingchosen != "none" && endingbegun == false:
 		endingbegun = true
+		$TempMan.material = blur
+		$TempWindow.material = blur
 		$Ending.visible = true
 		$BackgroundMusic.stop()
 		$BackgroundMusic.stream = discovery
 		$BackgroundMusic.play()
+		
 		
 
 

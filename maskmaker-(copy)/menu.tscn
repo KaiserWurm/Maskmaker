@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://dhmq0cgh535gt"]
 
-[ext_resource type="Shader" uid="uid://cuq8s7eyl7n3t" path="res://menu.gdshader" id="1_ecwwl"]
 [ext_resource type="Script" uid="uid://bhisuf7tbnsvj" path="res://start.gd" id="1_lti8b"]
-[ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="2_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://b5gx78t6jt3vy" path="res://GGJ Maskmaker Game Jam/opening_final.jpg" id="2_kk3ma"]
 [ext_resource type="Script" uid="uid://be0ljahffghao" path="res://quit.gd" id="2_ouk20"]
 [ext_resource type="Script" uid="uid://b8ko7c7kvra8l" path="res://fullscreen.gd" id="3_mae5d"]
 [ext_resource type="PackedScene" uid="uid://djoaamchonsc8" path="res://click.tscn" id="4_4hy44"]
 [ext_resource type="FontFile" uid="uid://dk1gx1t20bybb" path="res://D3SmartismA.ttf" id="4_nrnbx"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqepy"]
-shader = ExtResource("1_ecwwl")
-shader_parameter/strength = 13
+[ext_resource type="PackedScene" uid="uid://c0aylxe0b6oay" path="res://dustmotes.tscn" id="7_ecwwl"]
+[ext_resource type="Theme" uid="uid://do4lnijx2yxd6" path="res://ballontheme.tres" id="8_kk3ma"]
 
 [node name="StartScreen" type="Control" unique_id=1544959263]
 layout_mode = 3
@@ -21,17 +18,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802441091]
-material = SubResource("ShaderMaterial_iqepy")
 texture = ExtResource("2_kk3ma")
 offset = Vector2(960, 540)
 
 [node name="Click" parent="." unique_id=300910494 instance=ExtResource("4_4hy44")]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1043539332]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1058672955]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -141.5
+offset_right = 141.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -54,6 +53,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Chapter 1" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1481157179]
+visible = false
 layout_mode = 2
 text = "Chapter 1"
 script = ExtResource("1_lti8b")
@@ -61,13 +61,13 @@ nextscene = "uid://scy8ycf86rna"
 
 [node name="Chapter 2" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1525262412]
 layout_mode = 2
-text = "Chapter 2"
+text = "Chapter 1"
 script = ExtResource("1_lti8b")
 nextscene = "uid://6i527eyxmdvq"
 
 [node name="Chapter 3" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1815041940]
 layout_mode = 2
-text = "Chapter 3"
+text = "Chapter 2"
 script = ExtResource("1_lti8b")
 nextscene = "uid://3j372ojgi7yl"
 
@@ -77,9 +77,64 @@ text = "Quit"
 script = ExtResource("2_ouk20")
 
 [node name="Fullscreen" type="CheckButton" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1608173229]
+visible = false
 layout_mode = 2
 text = "Fullscreen"
 script = ExtResource("3_mae5d")
+
+[node name="CPUParticles2D" parent="." unique_id=1373107089 instance=ExtResource("7_ecwwl")]
+position = Vector2(960, 541)
+color = Color(0.83137256, 0.6862745, 0.21568628, 0.38039216)
+
+[node name="Label" type="Label" parent="." unique_id=1123003851]
+layout_mode = 0
+offset_left = 1505.0
+offset_top = 891.0
+offset_right = 1761.0
+offset_bottom = 926.0
+theme = ExtResource("8_kk3ma")
+theme_override_font_sizes/font_size = 20
+text = "Music and Audio by Emily Bradford"
+
+[node name="Label5" type="Label" parent="." unique_id=361481329]
+layout_mode = 0
+offset_left = 1505.0
+offset_top = 995.0
+offset_right = 1761.0
+offset_bottom = 1030.0
+theme = ExtResource("8_kk3ma")
+theme_override_font_sizes/font_size = 20
+text = "Made for the 2026 Global Game Jam"
+
+[node name="Label2" type="Label" parent="." unique_id=1420219470]
+layout_mode = 0
+offset_left = 1505.0
+offset_top = 942.0
+offset_right = 1761.0
+offset_bottom = 977.0
+theme = ExtResource("8_kk3ma")
+theme_override_font_sizes/font_size = 20
+text = "Produced by Kai Bradford"
+
+[node name="Label3" type="Label" parent="." unique_id=553155508]
+layout_mode = 0
+offset_left = 1505.0
+offset_top = 789.0
+offset_right = 1761.0
+offset_bottom = 824.0
+theme = ExtResource("8_kk3ma")
+theme_override_font_sizes/font_size = 20
+text = "Art and Visuals by Sasha Katcher"
+
+[node name="Label4" type="Label" parent="." unique_id=1786971892]
+layout_mode = 0
+offset_left = 1505.0
+offset_top = 838.0
+offset_right = 1819.0
+offset_bottom = 873.0
+theme = ExtResource("8_kk3ma")
+theme_override_font_sizes/font_size = 20
+text = "Writing and Worldbuilding by Zach Sterling"
 
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Chapter 1" to="HBoxContainer/MarginContainer/VBoxContainer/Chapter 1" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Chapter 2" to="HBoxContainer/MarginContainer/VBoxContainer/Chapter 2" method="_on_pressed"]

@@ -20,7 +20,7 @@ Maskmaker: Very good.
 	=> Mask
 - End conversation
 	Maskmaker: I have all I need.
-	=> end
+	=> firstStandardQuestion
 
 
 
@@ -119,6 +119,40 @@ Maskmaker: Very good.
 - Move to other topics
 	=> home
 
+~ firstStandardQuestion
+Maskmaker: Laurus, how do you wish to be remembered?
+Laurus: ...[wait=3] I don't know if I want to.
+Maskmaker: Be remembered?
+Laurus: Yes.
+Maskmaker: Why is that?
+Laurus: My actions speak for themselves. To worry about the legacy is to put my will above Ocara's.
+Maskmaker: Well said.
+
+~ secondStandardQuestion
+Maskmaker: Laurus, when I ask the caretaker who raised you, Crellon, who you are what do you think she will say?
+Laurus: That I asked too many questions, probably.
+Maskmaker: Were you a curious child?
+Laurus: I suppose so. I asked her about everything and anything, and she did what she could to answer them.
+Laurus: Without leading me down dark paths, of course.
+Maskmaker: Curiousity is a double-edged sword.
+Laurus: One I hope I have tempered well.
+
+~ thirdStandardQuestion
+Maskmaker: Laurus, what do you think Ocara wills for you?
+Laurus: To serve.
+Maskmaker: Serve how?
+Laurus: Where the need is greatest.
+Maskmaker: Which is where?
+Laurus: Only Ocara knows.
+Maskmaker: I see. Thank you.
+
+~ closingQuestion
+Maskmaker: Eiche, will the tide rise or fall?
+Laurus: It rises even now.
+Maskmaker: ...[wait=3] Wise words.
+Maskmaker: Thank you Laurus for your time. I will now build your new face.
+Laurus: Yes honorable maskmaker. The tide rises.
+Maskmaker: The tide rises.
 
 ~ miner
 Maskmaker: I have chosen the miner mask for you. Your job will be hard work, but it will be the work that glorifies Ocara. [if interests.has("Doctor")]And this way you may keep your bug collection.[/if]

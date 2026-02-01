@@ -239,7 +239,7 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 	if not letter in [" ", "."]:
 		%AudioStreamPlayer.pitch_scale = randf_range(p1, p2)
 		%AudioStreamPlayer.play()
-	if not dialogue_line.character == "Maskmaker" || "Some Years Later":
+	if not dialogue_line.character == "Maskmaker" and "Some Years Later":
 		if DialogueManager.speak == 0:
 			DialogueManager.speak = 1
 		else:
