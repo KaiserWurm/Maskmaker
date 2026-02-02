@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://c353s3yv2kwea"]
+[gd_scene format=3 uid="uid://mp6khuoy88v2"]
 
-[ext_resource type="Script" uid="uid://nk7ys05lfi2c" path="res://endingscreen.gd" id="1_vab38"]
+[ext_resource type="Script" path="res://endingscreen.gd" id="1_vab38"]
 [ext_resource type="Shader" uid="uid://cuq8s7eyl7n3t" path="res://menu.gdshader" id="1_y7g17"]
 [ext_resource type="Texture2D" uid="uid://cvwsg6qw6nj0g" path="res://GGJ Maskmaker Game Jam/Music/temp_window.png" id="2_fv75d"]
 [ext_resource type="Resource" uid="uid://dy7pya2rl6l18" path="res://Ending.dialogue" id="2_ym548"]
-[ext_resource type="PackedScene" uid="uid://cv1x2kcjg2y0w" path="res://click.tscn" id="3_yqjy2"]
+[ext_resource type="PackedScene" uid="uid://djoaamchonsc8" path="res://click.tscn" id="3_yqjy2"]
 [ext_resource type="Theme" uid="uid://do4lnijx2yxd6" path="res://ballontheme.tres" id="6_1yxij"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iqepy"]

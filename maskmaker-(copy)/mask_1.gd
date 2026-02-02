@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 func _on_mouse_entered() -> void:
 	panel.visible = true
 	selected = true
+	print("works")
 
 func _on_mouse_exited() -> void:
 	panel.visible = false

@@ -99,7 +99,7 @@ words = ExtResource("11_iw7q2")
 description = "Miner's don't ascend. Choosing this mask of the Miner will curse them to be seperated from their families above, just like I am."
 maskid = "miner"
 
-[node name="Panel" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask" unique_id=1717730212]
+[node name="Panel2" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask" unique_id=1717730212]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -116,7 +116,7 @@ words = ExtResource("11_iw7q2")
 description = "Bodies are vile, unclean things. Through Ocara we will leave our bodies behind, but doctors are cursed to keep their focus on the unclean and impure. At least they ascend."
 maskid = "doctor"
 
-[node name="Panel" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask2" unique_id=1520042733]
+[node name="Panel2" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask2" unique_id=1520042733]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -133,7 +133,7 @@ words = ExtResource("11_iw7q2")
 description = "The Clergy recognize the need for art and merriment, even if it distracts from the laborious great work above. To spend your time on frivolities instead of helping your brothers and sisters is a dream to some, and unbearable to others."
 maskid = "entertainer"
 
-[node name="Panel" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask3" unique_id=706724624]
+[node name="Panel2" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask3" unique_id=706724624]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -150,7 +150,7 @@ words = ExtResource("11_iw7q2")
 description = "When the world fell, the remnants of our unclean forefathers remained, scatter across the Above. Just as the ocean makes the Above clean, reclaimers find these remnants and make them holy once more."
 maskid = "reclaimer"
 
-[node name="Panel" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask4" unique_id=511422686]
+[node name="Panel2" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask4" unique_id=511422686]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -167,7 +167,7 @@ words = ExtResource("11_iw7q2")
 description = "Tiling the soil, growing the food that feeds and nourishes the great labor. To most, this is the highest honor one can hope for, to be entrusted with the caretaking of the new world Ocara is making.."
 maskid = "gardener"
 
-[node name="Panel" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask5" unique_id=101980122]
+[node name="Panel2" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask5" unique_id=101980122]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -186,7 +186,7 @@ words = ExtResource("11_iw7q2")
 description = "Ocara's chosen, and the highest honor one can receive. With that honor comes the burden of responsibility unparalelled by any other mask. "
 maskid = "priest"
 
-[node name="Panel" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask6" unique_id=754258348]
+[node name="Panel2" type="Panel" parent="Mask Selection/Panel/MarginContainer/GridContainer/TestMask6" unique_id=754258348]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
